@@ -1,34 +1,43 @@
-<!-- html4.1 trasitional 규격으로 문서를 셋팅하세요 -->
+<!doctype html>
 <html>
-<head>
-	<!-- 다국어를 사용할 수 있도록 셋팅하세요 -->
-	<!-- 브라우저 탭에 표기될 제목을 셋팅하세요 -->
-	<!-- css/basic.css를 연결해 주세요-->
-</head>
-<body>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <title>웹표준</title>
+  </head>
+  <body>
     <h1>웹표준 대회</h1>
-    <h2>행사 정보</h2>
-    <img src="http://placehold.it/300x80" alt="참가하세요! 웹표준경진대회" />
-    <p>대회기간 : 20__년도 5월 18일</p>
-    <p>공식홈페이지 : http://ws_award.com</p> <!-- 클릭하면 해당주소로 이동하도록 마크없을 고치시요 -->
-    <p>공식이메일 : eulsoo.jung@gmail.com</p> <!-- 클릭하면 이메일프로그램이 실행되도록 마크업을 고치시요 -->
+    <div>
+      <h2>행사 정보</h2>
+      <img
+        src="https://placeholdit.com/300x80/dddddd/999999"
+        alt="참가하세요! 웹표준경진대회"
+      />
+      <p>대회기간 : 20__년도 5월 18일</p>
+      <a href="http://ws_award.com" target="_blank">공식홈페이지</a>
+      <a href="mailto:eulsoo.jung@gmail.com"
+        >공식이메일 : eulsoo.jung@gmail.com</a
+      >
+    </div>
 
-    <hr/><!-- div 태그를 이용해 행사 정보와 시상을 그룹핑 하시요 -->
+    <div>
+      <h2>시상</h2>
+      <h3>시상등수</h3>
+      <ol>
+        <!-- "등수 > 이름 > 성별" 순으로 강조하시요 -->
+        <li><strong>1등</strong> - <em>정아람</em><span>(여자)</span></li>
+        <li><strong>2등</strong> - <em>김한석</em><span>(남자)</span></li>
+        <li><strong>3등</strong> - <em>김민수</em><span>(남자)</span></li>
+        <li><strong>4등</strong> - <em>노한수</em><span>(남자)</span></li>
+        <li><strong>5등</strong> - <em>정금화</em><span>(여자)</span></li>
+      </ol>
 
-    <h2>시상</h2>
-    <h3>시상등수</h3>
-    <ol> <!-- "등수 > 이름 > 성별" 순으로 강조하시요 -->
-        <li>1등 - 정아람(여자)</li>
-        <li>2등 - 김한석(남자)</li>
-        <li>3등 - 김민수(남자)</li>
-        <li>4등 - 노한수(남자)</li>
-        <li>5등 - 정금화(여자)</li>
-    </ol>
-
-    <h3>1등 우승소감</h3>
-    <p>저는 팀버너스리가 말한 "웹의 가장 큰 힘은 그 보편성에 있다!"를 생각하며 대회에 
-    임했습니다.</p>
-    <!-- 좀 더 의미있는 태그로 컨텐츠를 마크업하시요 -->
-</body>
+      <h3>1등 우승소감</h3>
+      <p>
+        저는 팀버너스리가 말한
+        <q><i>웹의 가장 큰 힘은 그 보편성에 있다!</i></q> 를 생각하며 대회에
+        임했습니다.
+      </p>
+      <!-- 좀 더 의미있는 태그로 컨텐츠를 마크업하시요 -->
+    </div>
+  </body>
 </html>
