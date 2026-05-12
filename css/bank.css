@@ -1,0 +1,91 @@
+@charset 'utf-8';
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+/* 변수를 통해 사용 */
+:root {
+  --app_bg: #f9fafc;
+  --primary: #041a6f;
+  --primary_10: #e6e8f0;
+  --border_line: rgba(0, 0, 0, 0.1);
+  --gray_10: #dedede;
+  --gray_20: #bdbdbd;
+  --gray_40: #979797;
+  --gray_90: #1c1c1c;
+  --white: #ffffff;
+  --card_round: 8px;
+}
+/* reset */
+html {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  /* 피그마 14(크기) 나누기 18(auto) */
+  line-height: 1.2;
+  font-weight: 500;
+}
+body {
+  margin: 0px;
+  padding: 10px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+form,
+fieldset,
+blockquote,
+address,
+table,
+thead,
+tbody,
+tfoot,
+tr,
+td,
+caption {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+/* Typography */
+.main_title {
+  font-size: 18px;
+  font-weight: 700;
+}
+.sub_title {
+  font-size: 14px;
+  font-weight: 700;
+}
+/* Component */
+.app_title {
+  border: 1px solid black;
+  display: flex;
+  height: 51px;
+  padding-left: 24px;
+  align-items: center;
+  button {
+    border: none;
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+    background-image: url("../images/ion-ios-arrow-back.svg");
+  }
+}

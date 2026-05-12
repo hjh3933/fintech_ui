@@ -41,17 +41,25 @@
         /* object-fit: cover; */
         object-fit: contain;
       }
-      .icon > .like {
+      .icon > .ico {
         border: 1px solid black;
         font-size: 0;
         width: 50px;
         height: 50px;
         display: block;
+        /* url을 한번만 가져오도록 class를 추가함 */
         background-image: url("./images/icon.png");
         background-repeat: no-repeat;
+      }
+      .like:hover {
+        /* background-position: right top; */
+        background-position: -50px 0px;
+      }
+      .icon > .find {
+        position: absolute;
+        background-position: 0px -50px;
         &:hover {
-          /* background-position: right top; */
-          background-position: -50px 0px;
+          background-position: -50px -50px;
         }
       }
     </style>
@@ -59,9 +67,9 @@
 
   <body>
     <div class="icon">
-      <a href="" class="like">즐겨찾기</a>
+      <a href="" class="ico like">즐겨찾기</a>
+      <a href="" class="ico find">위치찾기</a>
     </div>
-    <br />
     <div class="bg_box">
       <p>
         박스는 가장자리를 둘러싸고있는 <strong>block박스</strong>와 글줄(line)을
