@@ -10,6 +10,7 @@
   --gray_20: #bdbdbd;
   --gray_40: #979797;
   --gray_90: #1c1c1c;
+  --back_black: #222222;
   --white: #ffffff;
   --card_round: 8px;
 }
@@ -20,6 +21,7 @@ html {
   /* 피그마 14(크기) 나누기 18(auto) */
   line-height: 1.2;
   font-weight: 500;
+  color: var(--back_black);
 }
 body {
   margin: 0px;
@@ -72,10 +74,11 @@ li {
 .sub_title {
   font-size: 14px;
   font-weight: 700;
+  color: var(--gray_40);
 }
 /* Component */
 .app_title {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   height: 51px;
   padding-left: 24px;
@@ -87,5 +90,64 @@ li {
     height: 24px;
     font-size: 0;
     background-image: url("../images/ion-ios-arrow-back.svg");
+  }
+}
+.item {
+  border-bottom: 1px solid var(--border_line);
+  display: flex;
+  gap: 14px;
+  width: 100%;
+  align-items: center;
+  height: 75px;
+  .img_box {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary_10);
+    border-radius: 8px;
+  }
+  .text_box {
+    .text {
+      margin-bottom: 3px;
+    }
+    time {
+      font-weight: 400px;
+      color: var(--gray_20);
+    }
+  }
+}
+.card_list {
+  background-color: var(--white);
+  padding: 10px 16px;
+  border-radius: var(--card_round);
+  box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.05);
+}
+.card_list > .item:last-of-type {
+  border: none;
+}
+/* Notification */
+.wrap {
+  border: 1px solid black;
+  background-color: var(--app_bg);
+  /* width: 376px; */
+  height: 812px;
+  .system {
+    height: 41px;
+    background-color: var(--primary_10);
+  }
+  main {
+    padding: 0 24px;
+    margin-top: 21px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    .aday {
+      /* border: 1px solid black; */
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 }
