@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .mother {
+        border: 4px solid black;
+        padding: 20px;
+        /* height: 300px; */
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        /* gap: 10px; */
+        row-gap: 10px;
+        column-gap: 20px;
+      }
+      .mother > .son {
+        background-color: pink;
+        text-align: center;
+        height: 100px;
+      }
+      .mother > .son.a {
+        /* f12 grid 눌러서 격자 번호 참고 */
+        /* grid-column-start: 2;
+              grid-column-end: 3;
+              grid-row-start: 2;
+              grid-row-end: 4; */
+      }
+      /* container */
+      .container {
+        border: 1px solid black;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        height: 600px;
+        * {
+          text-align: center;
+        }
+        header {
+          background-color: yellow;
+          grid-column-start: 1;
+          grid-column-end: 5;
+        }
+        main {
+          background-color: orange;
+          grid-column: 1/4;
+          grid-row: 2/5;
+        }
+        aside {
+          background-color: lime;
+          grid-row: 2/5;
+        }
+        footer {
+          background-color: gray;
+          grid-column: 1/5;
+        }
+      }
+      /* normal_flow */
+      body {
+      }
+      .normal_flow {
+        /* 기준표시는 position으로 가능 relative 외의 다른것도 가능하지만
+            부모요소를 따로 조정하지 않을경우 relative를 주는것임 */
+        position: relative;
+        border: 4px solid red;
+        padding: 20px;
+        .son {
+          background-color: lime;
+        }
+        .ps {
+          color: white;
+          background-color: black;
+          opacity: 0.7;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0; /*너비를 주니까 쭉 늘어나지 않음 왜 left 우선일까?*/
+          /* 규칙 - 왼쪽이 우선, 위쪽이 우선 */
+          bottom: 0;
+          width: 30%;
+          height: 150px;
+          /* margin의 개입가능 auto 계산법은 무시(width가 없어서)
+          width가 생기면 margin이 개입됨 */
+          /* position으로 띄워도 너비가 있으면 margin은 적용된다 */
+          /* margin-left: auto; */
+          /* margin-right: auto; */
+          /* 원래 margin top, bottom의 auto는 불가능 그렇지만 postion에서는 위아래 auto를 통해 중앙 정렬이 가능하다 */
+          /* margin-top: auto; */
+          /* margin-bottom: auto; */
+          /* margin: auto; */
+
+          /* left 50%를 준 뒤 너비의 절반을 빼는 방식 */
+          left: 50%;
+          top: 50%;
+          /* margin-left: -100px;
+          margin-top: -75px; */
+          /* translate 자기자신의 절반만큼 이동가능 */
+          transform: translate(-50%, -50%);
+        }
+      }
+      /* header 만들기 실습 */
+      .menu {
+        background-color: black;
+        opacity: 0.8;
+        color: white;
+        height: 50px;
+        /* width: 100px; */
+        position: fixed;
+        left: 0;
+        right: 0;
+        /* top: 0; */
+        bottom: 0;
+        /* 마크업순서대로 뜨기 때문에 css로 우선순위 부여해야한다 */
+        z-index: 99;
+      }
+      /* 실습 */
+      .practice {
+        border: 1px solid black;
+        padding: 20px 15px;
+        .middle_box {
+          display: flex;
+          gap: 20px;
+          .green_box {
+            border: 1px solid lime;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            gap: 10px;
+            .img_box {
+              border: 5px solid lime;
+              height: 100px;
+              width: 100px;
+              flex-shrink: 0;
+            }
+            .text_box {
+              a {
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                color: red;
+                img {
+                  width: 30px;
+                }
+                span {
+                  position: absolute;
+                  right: 30px;
+                }
+              }
+            }
+          }
+        }
+        .bottom_box {
+          border: 1px solid black;
+          padding: 5px;
+          margin-top: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="practice">
+      <div class="middle_box">
+        <div class="green_box">
+          <div class="img_box"></div>
+          <div class="text_box">
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </p>
+            <a href="#" class="comment"
+              ><img src="./images/icon_info.png" alt="" />
+              <span>3</span>
+            </a>
+          </div>
+        </div>
+        <div class="green_box">
+          <div class="img_box"></div>
+          <div class="text_box">
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </p>
+            <a href="#" class="comment">
+              <img src="./images/icon_info.png" alt="" />
+              <span>3</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom_box">BOTTOM</div>
+    </div>
+    <header class="menu">header</header>
+    <!-- position -->
+    <!-- absolute: 조상(중에 한명 선택) 기준 -->
+    <!-- 따로 positon: relative 지정안하면 부모 -> 조부모 순으로 점차 위로 올라간다고 생각하면됨 -->
+    <!-- 지정없으면 맨 위 조상 기준(html)이 된다 -->
+    <!-- relative: 자신이 차지하던 빈공간 기준(복사버전기준) -->
+    <!-- fixed: 뷰포트 기준 -->
+    <div class="normal_flow">
+      <!-- 기준 -->
+      <div class="son">son</div>
+      <div class="son">son</div>
+      <div class="son ps">son</div>
+      <div class="son">son</div>
+      <div class="son">son</div>
+    </div>
+    <div class="container">
+      <header>header</header>
+      <main>main</main>
+      <aside>aside</aside>
+      <footer>footer</footer>
+    </div>
+    <div class="mother">
+      <div class="son a">A</div>
+      <div class="son">B</div>
+      <div class="son">C</div>
+      <div class="son">C</div>
+      <div class="son">C</div>
+      <div class="son">C</div>
+      <div class="son">C</div>
+      <div class="son">C</div>
+      <div class="son">C</div>
+      <div class="son">C</div>
+      <div class="son">C</div>
+      <div class="son">C</div>
+      <div class="son">C</div>
+      <div class="son">C</div>
+      <div class="son">C</div>
+      <div class="son">C</div>
+      <div class="son">C</div>
+    </div>
+  </body>
+</html>

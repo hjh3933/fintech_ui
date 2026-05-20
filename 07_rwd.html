@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* html body 로 적으면 미디어 쿼리 적용이 안됨, 무조건 같은 방식으로 호출할것 */
+      body {
+        background-color: yellow;
+        border: 4px solid red;
+        color: black;
+        padding: 0 10px;
+      }
+      .list {
+        border: 4px solid gray;
+        display: grid;
+        list-style-type: none;
+        padding-left: 0;
+        grid-auto-rows: 50px; /* 높이 대신하기 가능 */
+        grid-template-columns: 1fr;
+      }
+      .list > li {
+        background-color: pink;
+        /* height: 50px; */
+        border: 1px solid gray;
+        text-align: center;
+      }
+      h1 {
+        font-size: 32px;
+      }
+      p {
+        font-size: 24px;
+      }
+      /* 720px 까지(max) 적용 */
+      @media (min-width: 720px) {
+        h1 {
+          font-size: 28px;
+        }
+        p {
+          font-size: 22px;
+        }
+        body {
+          background-color: red;
+        }
+        .list {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      /* 721부터(min) 989까지(max) */
+      /* @media (min-width: 781px) and (max-width: 989px) { */
+      @media (min-width: 780px) {
+        h1 {
+          font-size: 24px;
+        }
+        p {
+          font-size: 18px;
+        }
+        body {
+          background-color: green;
+          color: gray;
+        }
+      }
+      /* 990부터(min) */
+      @media (min-width: 990px) {
+        p {
+          font-size: 16px;
+        }
+        body {
+          background-color: orange;
+          color: green;
+        }
+        .list {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>반응형 웹디자인</h1>
+    <p>화면의 크기에 따라 레이아웃이 바뀌는 웹 디자인</p>
+    <ul class="list">
+      <li>제품1</li>
+      <li>제품2</li>
+      <li>제품3</li>
+      <li>제품4</li>
+      <li>제품5</li>
+      <li>제품6</li>
+      <li>제품7</li>
+      <li>제품8</li>
+    </ul>
+    <script>
+      window.alert("반응형 웹 디자인");
+    </script>
+  </body>
+</html>
