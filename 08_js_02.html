@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // while
+
+      //   let i = 0;
+      //   while (i < 5) {
+      //     if (i === 3) {
+      //       break; //종료
+      //     }
+      //     console.log(i);
+      //     i++;
+      //   }
+
+      // for
+      //   for (let i = 0; i < 5; i++) {
+      //     // if (i === 3) break;
+      //     // if (i === 3) continue;
+      //     console.log(i);
+      //   }
+
+      //   for (let i = 0; i < 5; i++) {
+      //     console.log(`${i}번째 입니다`);
+      //   }
+
+      // 구구단
+      //   function gugu(num) {
+      //     console.log("구구단을 외자, 구구단을 외자");
+      //     for (let i = 1; i < 10; i++) {
+      //       console.log(`${num} * ${i} = ${num * i}`);
+      //     }
+      //   }
+      //   gugu(1);
+      //   gugu(3);
+      //   gugu(5);
+      //   gugu(10);
+
+      // let 객체 = {
+      //   name: "홍길동",
+      //   age: 30,
+      //   job: "도적",
+      //   job2: "의적",
+      //   job3: "영웅",
+      //   정을수안녕: "정을수 안녕하세요",
+      //   정민수안녕: "정민수 안녕하세요",
+      // };
+      //   객체["name"] = "김철수";
+      //   객체.age = 25;
+      //   객체.job = "교사";
+      //   console.log(객체);
+
+      //   const result = 객체.hasOwnProperty("정을수안녕");
+      //   console.log(result); //true
+
+      //   function deleteProperty(prop) {
+      //     delete 객체[prop];
+      //   }
+
+      //   function addProperty(prop, value) {
+      //     객체[prop] = value;
+      //   }
+
+      //   function resetProperty(prop) {
+      //     // 객체[prop] = undefined;
+      //     객체[`${prop}안녕`] = undefined;
+
+      // if (prop === "name") 객체.name = undefined;
+      // if (prop === "age") 객체.age = undefined;
+      // if (prop === "job") 객체.job = undefined;
+      // }
+      //   resetProperty("job");
+      //   resetProperty("정을수");
+      //   addProperty("윗옷", "티셔츠");
+      //   deleteProperty("윗옷", "티셔츠");
+      //   console.log(객체);
+
+      //   // 배열
+      //   const 배열 = ["사과", "바나나", "딸기", "포도", "수박"];
+      //   console.log(배열);
+      //   console.log(배열[2]);
+
+      //   // 배열 수정
+      //   배열[2] = "메론";
+      //   console.log(배열[2]);
+      //   console.log(배열.length);
+      //   console.log(배열.indexOf("바나나"));
+
+      //   const innerValue = 10;
+      //   const innerValu2e = "222";
+      //   function fn(dd) {
+      //     return 0;
+      //   }
+
+      //   console.log(typeof innerValue);
+      //   console.log(typeof innerValu2e);
+      //   console.log(typeof 배열); //object
+      //   console.log(Array.isArray(배열)); //true
+      //   console.log(typeof fn); //function
+
+      //   let 데이터 = "홍길동";
+
+      //   if (typeof 데이터 === "string") {
+      //     console.log("데이터는 문자열입니다");
+      //   }
+
+      //   const 가짜배열 = {
+      //     0: "사과",
+      //     1: "바나나",
+      //     2: "딸기",
+      //     length: 3,
+      //   };
+
+      //   console.log(가짜배열[2]);
+      //   console.log(Array.isArray(가짜배열)); //false
+
+      const 학생 = {
+        이름: "홍길동",
+        나이: 30,
+        성별: "남성",
+        취미: ["독서", "운동", "게임"],
+        주소: {
+          시: "서울",
+          구: "강남구",
+          동: "역삼동",
+        },
+        인사하기: function () {
+          console.log(`안녕하세요, 저는 ${학생.이름}입니다.`);
+        },
+      };
+      //   console.log(학생.이름);
+      //   console.log(학생.취미[2]);
+      //   console.log(학생.주소.동);
+      //   학생.인사하기();
+
+      // 복합 객체 만들어보기
+      const 파스타 = {
+        칼로리: 450,
+        이름: "크림 페투치네 파스타",
+        재료: [
+          "생크림",
+          "우유",
+          "페투치네면",
+          "다진마늘",
+          "양파",
+          "페퍼론치노",
+          "치킨스톡",
+        ],
+        용량: {
+          생크림: 100,
+          우유: 100,
+          페투치네면: 80,
+        },
+        레시피: function (topping) {
+          console.log("====파스타레시피====");
+          console.log(
+            `끓는 물에 ${파스타.재료[2]} ${파스타.용량.페투치네면}g을 10분 삶아줍니다`,
+          );
+          console.log("다진마늘과 양파를 올리브오일에 볶다가");
+          if (topping) {
+            console.log(`곁들일 ${topping}을 함께 넣고 볶아주세요`);
+          }
+          console.log(
+            `${파스타.재료[0]} ${파스타.용량.생크림}ml와 ${파스타.재료[1]} ${파스타.용량.우유}ml를 넣고 끓이다가 치킨스톡으로 간을 해줍니다`,
+          );
+          console.log(`익힌 면까지 넣고 3분정도 졸여주면 ${파스타.이름} 완성`);
+        },
+      };
+
+      //   console.log(파스타.이름);
+      //   console.log(파스타.재료[4]);
+      //   console.log(파스타.용량.페투치네면);
+      //   파스타.레시피();
+      //   파스타.레시피("베이컨");
+
+      // 객체 훑기 for...in
+      //   for (const key in 파스타) {
+      //     // console.log(key);
+      //     console.log(파스타[key]);
+      //   }
+
+      // 배열 훑기 for...of
+      //   for (const key of 파스타.재료) {
+      //     console.log(key);
+      //   }
+      //   for (const key of 학생.취미) {
+      //     console.log(key);
+      //     if (key === "운동") {
+      //       학생.인사하기();
+      //       break;
+      //     }
+      //   }
+      //   for (let i = 0; i < 학생.취미.length; i++) {
+      //     console.log(학생.취미[i]);
+      //     if (학생.취미[i] === "운동") {
+      //       학생.인사하기();
+      //       break;
+      //     }
+      //   }
+
+      // 문자 다루는 도구들
+      const className = "t_school";
+      //   console.log(className);
+      className.split();
+      console.log(className.split("_"));
+      console.log(className.substring(2));
+      console.log(className.substring(2, 8));
+      console.log(className.length);
+      console.log(className.substr(2, 3));
+      console.log(className.indexOf("o"));
+
+      // 복합적으로 사용가능
+      console.log(className.substring(className.indexOf("s")));
+    </script>
+  </head>
+  <body></body>
+</html>
